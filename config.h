@@ -3,6 +3,9 @@
 
 #pragma once
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#define OLED_FONT_H  "lib/glcdfont.c"
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
