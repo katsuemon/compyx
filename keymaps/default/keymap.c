@@ -9,7 +9,18 @@ enum layer_number {
     _NMPDPC,
     _BASE68,
     _NMPD68
-}
+};
+
+enum led_flag {
+    _KANA = 0x01,
+    _ROMA = 0x02,
+    _CODE = 0x04,
+    _CAPS = 0x08,
+    _INS  = 0x10,
+    _HIRA = 0x20,
+    _ZENK = 0x40,
+    _NUML = 0x80
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* PC Layout
@@ -47,8 +58,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [_BASEPC] = LAYOUT_compyx_jis(
-        KC_ESC,  KC_APP,     KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, TD(TD_VOLU_LAYER),
-        KC_GRV,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_HOME, TG(_NMPDWIN),KC_END,
+        KC_ESC,  KC_APP,     KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, KC_VOLU,
+        KC_GRV,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_HOME, _______, KC_END,
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_DEL,  KC_CLR,  KC_PMNS,
         KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  _______, KC_INS,  KC_PPLS,
         KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
