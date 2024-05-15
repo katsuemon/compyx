@@ -3,7 +3,6 @@
     "keyboard_name": "emon/compyx",
     "maintainer": "katsuemon",
     "bootloader": "caterina",
-    "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
         "command": false,
