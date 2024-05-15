@@ -4,24 +4,6 @@
 #include QMK_KEYBOARD_H
 #include "keymap_japanese.h"
 
-enum layer_number {
-    _BASEPC,
-    _NMPDPC,
-    _BASE68,
-    _NMPD68
-};
-
-enum led_flag {
-    _KANA = 0x01,
-    _ROMA = 0x02,
-    _CODE = 0x04,
-    _CAPS = 0x08,
-    _INS  = 0x10,
-    _HIRA = 0x20,
-    _ZENK = 0x40,
-    _NUML = 0x80
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* PC Layout
      * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
@@ -90,3 +72,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______,            _______,            _______, _______, _______, _______, _______, _______,      _______, _______, _______
     )
 };
+
+enum layer_number {
+    _BASEPC,
+    _NMPDPC,
+    _BASE68,
+    _NMPD68
+};
+
+enum led_flag {
+    _KANA = 0x01,
+    _ROMA = 0x02,
+    _CODE = 0x04,
+    _CAPS = 0x08,
+    _INS  = 0x10,
+    _HIRA = 0x20,
+    _ZENK = 0x40,
+    _NUML = 0x80
+};
+
+int led_state[4] = { 0, 0 };
