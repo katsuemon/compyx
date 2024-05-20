@@ -110,37 +110,74 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_X68K_LAYER] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_APP,_BASE68),
 };
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_PSCR:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
+            }
+            return true;
+        case KC_LSCR:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
+            }
+            return true;
+        case KC_PAUS:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
+            }
+            return true;
+        case KC_INS:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _INS;
+            }
+            return true;
+        case KC_LGUI:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
+            }
+            return true;
+        case KC_RGUI:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
+            }
+            return true;
+        case KC_NUM:
+            if (record->event.pressed) {    
+                led_layer_state[get_highest_layer(layer_state)] ^= _NUML;
+            }
+            return true;
+        default:
+            return true;
+    }
+}
+
 #ifdef OLED_ENABLE
 static void render_logo(void) {
     static const char PROGMEM compyx_logo[] = {
         0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
         0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
-        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0x00
+        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
     };
 
     oled_write_P(compyx_logo, false);
 }
-
-static void render_layer(void) {
-    static const char PROGMEM img_layer[] = { 0x01, 0x02, 0x03, 0x04, 0x00 };
-    oled_write_P(img_layer, false);
-}
-
+/*
 static void render_pc(void) {
-    static const char PROGMEM img_pc[] = { 0x05, 0x06, 0x07, 0x00 };
+    static const char PROGMEM img_pc[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x00 };
     oled_write_P(img_pc, false);
 }
 
 static void render_x68k(void) {
-    static const char PROGMEM img_x68k[] = { 0x0B, 0x0C, 0x0C, 0x00 };
+    static const char PROGMEM img_x68k[] = { 0x01, 0x02, 0x03, 0x04, 0x0B, 0x0C, 0x0D, 0x00 };
     oled_write_P(img_x68k, false);
 }
 
 static void render_num(void) {
-    static const char PROGMEM img_num[] = { 0x08, 0x09, 0x09, 0x00 };
+    static const char PROGMEM img_num[] = { 0x01, 0x02, 0x03, 0x04, 0x08, 0x09, 0x0A, 0x00 };
     oled_write_P(img_num, false);
 }
-
+*/
 static void render_kana_on(void) {
     static const char PROGMEM img_kana_on[] = { 0x8D, 0x8E, 0x8F, 0x00 };
     oled_write_P(img_kana_on, false);
@@ -217,10 +254,10 @@ bool oled_task_user(void) {
     oled_set_cursor(0,0);
 
     render_logo();
-
+/*
     // Layer indicator
-    oled_set_cursor(14,2);
-    render_layer();
+    oled_set_cursor(13,2);
+
     switch(get_highest_layer(layer_state)) {
         case _BASEPC:
             render_pc();
@@ -237,7 +274,7 @@ bool oled_task_user(void) {
         default:
             oled_write_P(PSTR("UNDEF\n"),false);
     }
-
+*/
     // LED State indicator
     oled_set_cursor(0,3);
     if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
