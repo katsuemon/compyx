@@ -113,37 +113,37 @@ tap_dance_action_t tap_dance_actions[] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_PSCR:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
             }
             return true;
         case KC_LSCR:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
             }
             return true;
         case KC_PAUS:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
             }
             return true;
         case KC_INS:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _INS;
             }
             return true;
         case KC_LGUI:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
             }
             return true;
         case KC_RGUI:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
             }
             return true;
         case KC_NUM:
-            if (record->event.pressed) {    
+            if (record->event.pressed) {
                 led_layer_state[get_highest_layer(layer_state)] ^= _NUML;
             }
             return true;
@@ -155,96 +155,96 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef OLED_ENABLE
 static void render_logo(void) {
     static const char PROGMEM compyx_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
-        0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
-        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
+        0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94,
+        0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4,
+        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00
     };
 
     oled_write_P(compyx_logo, false);
 }
 /*
 static void render_pc(void) {
-    static const char PROGMEM img_pc[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x00 };
+    static const char PROGMEM img_pc[] = { 0x7F, 0x9F, 0xBF, 0xDF, 0xD6, 0xD7, 0xD8, 0x00 };
     oled_write_P(img_pc, false);
 }
 
 static void render_x68k(void) {
-    static const char PROGMEM img_x68k[] = { 0x01, 0x02, 0x03, 0x04, 0x0B, 0x0C, 0x0D, 0x00 };
+    static const char PROGMEM img_x68k[] = { 0x7F, 0x9F, 0xBF, 0xDF, 0xD9, 0xDA, 0xDB, 0x00 };
     oled_write_P(img_x68k, false);
 }
 
 static void render_num(void) {
-    static const char PROGMEM img_num[] = { 0x01, 0x02, 0x03, 0x04, 0x08, 0x09, 0x0A, 0x00 };
+    static const char PROGMEM img_num[] = { 0x7F, 0x9F, 0xBF, 0xDF, 0xDC, 0xDD, 0xDE, 0x00 };
     oled_write_P(img_num, false);
 }
 */
 static void render_kana_on(void) {
-    static const char PROGMEM img_kana_on[] = { 0x8D, 0x8E, 0x8F, 0x00 };
+    static const char PROGMEM img_kana_on[] = { 0x61, 0x62, 0x63, 0x00 };
     oled_write_P(img_kana_on, false);
 }
 
 static void render_roma_on(void) {
-    static const char PROGMEM img_roma_on[] = { 0x90, 0x91, 0x92, 0x00 };
+    static const char PROGMEM img_roma_on[] = { 0x64, 0x65, 0x66, 0x00 };
     oled_write_P(img_roma_on, false);
 }
 
 static void render_code_on(void) {
-    static const char PROGMEM img_code_on[] = { 0x93, 0x94, 0x95, 0x00 };
+    static const char PROGMEM img_code_on[] = { 0x67, 0x68, 0x69, 0x00 };
     oled_write_P(img_code_on, false);
 }
 
 static void render_caps_on(void) {
-    static const char PROGMEM img_caps_on[] = { 0x96, 0x97, 0x98, 0x00 };
+    static const char PROGMEM img_caps_on[] = { 0x6A, 0x6B, 0x6C, 0x00 };
     oled_write_P(img_caps_on, false);
 }
 
 static void render_ins_on(void) {
-    static const char PROGMEM img_ins_on[] = { 0x99, 0x9A, 0x9B, 0x00 };
+    static const char PROGMEM img_ins_on[] = { 0x6D, 0x6E, 0x6F, 0x00 };
     oled_write_P(img_ins_on, false);
 }
 
 static void render_hira_on(void) {
-    static const char PROGMEM img_hira_on[] = { 0x9C, 0x9D, 0x9E, 0x00 };
+    static const char PROGMEM img_hira_on[] = { 0x70, 0x71, 0x72, 0x00 };
     oled_write_P(img_hira_on, false);
 }
 
 static void render_zenkaku_on(void) {
-    static const char PROGMEM img_zenkaku_on[] = { 0xAD, 0xAE, 0xAF, 0x00 };
+    static const char PROGMEM img_zenkaku_on[] = { 0x73, 0x74, 0x75, 0x00 };
     oled_write_P(img_zenkaku_on, false);
 }
 
 static void render_kana_off(void) {
-    static const char PROGMEM img_kana_off[] = { 0xB0, 0xB1, 0xB2, 0x00 };
+    static const char PROGMEM img_kana_off[] = { 0x76, 0x77, 0x78, 0x00 };
     oled_write_P(img_kana_off, false);
 }
 
 static void render_roma_off(void) {
-    static const char PROGMEM img_roma_off[] = { 0xB3, 0xB4, 0xB5, 0x00 };
+    static const char PROGMEM img_roma_off[] = { 0x79, 0x7A, 0x7B, 0x00 };
     oled_write_P(img_roma_off, false);
 }
 
 static void render_code_off(void) {
-    static const char PROGMEM img_code_off[] = { 0xB6, 0xB7, 0xB8, 0x00 };
+    static const char PROGMEM img_code_off[] = { 0x7C, 0x7D, 0x7E, 0x00 };
     oled_write_P(img_code_off, false);
 }
 
 static void render_caps_off(void) {
-    static const char PROGMEM img_caps_off[] = { 0xB9, 0xBA, 0xBB, 0x00 };
+    static const char PROGMEM img_caps_off[] = { 0x96, 0x97, 0x98, 0x00 };
     oled_write_P(img_caps_off, false);
 }
 
 static void render_ins_off(void) {
-    static const char PROGMEM img_ins_off[] = { 0xBC, 0xBD, 0xBE, 0x00 };
+    static const char PROGMEM img_ins_off[] = { 0x99, 0x9A, 0x9B, 0x00 };
     oled_write_P(img_ins_off, false);
 }
 
 static void render_hira_off(void) {
-    static const char PROGMEM img_hira_off[] = { 0xCD, 0xCE, 0xCF, 0x00 };
+    static const char PROGMEM img_hira_off[] = { 0x9C, 0x9D, 0x9E, 0x00 };
     oled_write_P(img_hira_off, false);
 }
 
 static void render_zenkaku_off(void) {
-    static const char PROGMEM img_zenkaku_off[] = { 0xD0, 0xD1, 0xD2, 0x00 };
+    static const char PROGMEM img_zenkaku_off[] = { 0xB6, 0xB7, 0xB8, 0x00 };
     oled_write_P(img_zenkaku_off, false);
 }
 
