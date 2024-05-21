@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
      * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |DEL |CLR | -  |
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
-     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |PSCR|INS | +  |
+     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |    |INS | +  |
      * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
      * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |PGUP| UP |PGDN|
      * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  TD_68,      KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, KC_VOLU,
         KC_GRV,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_HOME, TG_NMPC, KC_END,
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_DEL,  KC_CLR,  KC_PMNS,
-        KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  KC_PSCR, KC_INS,  KC_PPLS,
+        KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  _______, KC_INS,  KC_PPLS,
         KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
         KC_LCTL, KC_LGUI, KC_LALT, JP_MHEN,             KC_SPC,            JP_HENK, JP_KANA, KC_RALT, KC_RGUI, MO(1)  , KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT
     ),
@@ -259,6 +259,8 @@ void keyboard_post_init_user(void) {
     render_hira_off();
     render_zenkaku_off();
     #endif
+    led_layer_state[_BASEPC] |= _INS;
+    led_layer_state[_BASE68] |= _INS;
 }
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -268,18 +270,24 @@ tap_dance_action_t tap_dance_actions[] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_PSCR:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
+                }
             }
             return true;
         case KC_LSCR:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
+                }
             }
             return true;
         case KC_PAUS:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
+                }
             }
             return true;
         case KC_INS:
@@ -288,13 +296,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         case KC_LGUI:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
+                }
             }
             return true;
         case KC_RGUI:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
+                }
             }
             return true;
         default:
@@ -312,52 +324,42 @@ bool oled_task_user(void) {
         led_layer_state[get_highest_layer(layer_state)] &= ~_CAPS;
     };
     // LED State indicator
-    if (get_highest_layer(layer_state) == _BASE68) {
-        if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
-            render_kana_on();
-            rgblight_sethsv_at(HSV_RED, 5);
-        } else {
-            render_kana_off();
-            rgblight_sethsv_at(HSV_OFF, 5);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _ROMA) {
-            render_roma_on();
-            rgblight_sethsv_at(HSV_RED, 6);
-        } else {
-            render_roma_off();
-            rgblight_sethsv_at(HSV_OFF, 6);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _CODE) {
-            render_code_on();
-            rgblight_sethsv_at(HSV_RED, 2);
-        } else {
-            render_code_off();
-            rgblight_sethsv_at(HSV_OFF, 2);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _INS) {
-            render_ins_on();
-            rgblight_sethsv_at(HSV_RED, 4);
-        } else {
-            render_ins_off();
-            rgblight_sethsv_at(HSV_OFF, 4);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
-            render_hira_on();
-            rgblight_sethsv_at(68,255,255, 1);
-        } else {
-            render_hira_off();
-            rgblight_sethsv_at(HSV_OFF, 1);
-        }
-        oled_set_cursor(18,3);
-        if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
-            render_zenkaku_on();
-            rgblight_sethsv_at(68,255,255, 0);
-        } else {
-            render_zenkaku_off();
-            rgblight_sethsv_at(HSV_OFF, 0);
-        }
-    } 
-
+    if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
+        render_kana_on();
+        rgblight_sethsv_at(HSV_RED, 5);
+    } else {
+        render_kana_off();
+        rgblight_sethsv_at(HSV_OFF, 5);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _ROMA) {
+        render_roma_on();
+        rgblight_sethsv_at(HSV_RED, 6);
+    } else {
+        render_roma_off();
+        rgblight_sethsv_at(HSV_OFF, 6);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _CODE) {
+        render_code_on();
+        rgblight_sethsv_at(HSV_RED, 2);
+    } else {
+        render_code_off();
+        rgblight_sethsv_at(HSV_OFF, 2);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
+        render_hira_on();
+        rgblight_sethsv_at(68,255,255, 1);
+    } else {
+        render_hira_off();
+        rgblight_sethsv_at(HSV_OFF, 1);
+    }
+    oled_set_cursor(18,3);
+    if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
+        render_zenkaku_on();
+        rgblight_sethsv_at(68,255,255, 0);
+    } else {
+        render_zenkaku_off();
+        rgblight_sethsv_at(HSV_OFF, 0);
+    }
     if (led_layer_state[get_highest_layer(layer_state)] & _CAPS) {
         render_caps_on();
         rgblight_sethsv_at(HSV_RED, 7);
@@ -365,9 +367,16 @@ bool oled_task_user(void) {
         render_caps_off();
 	    rgblight_sethsv_at(HSV_OFF, 7);
     }
+    if (led_layer_state[get_highest_layer(layer_state)] & _INS) {
+        render_ins_on();
+        rgblight_sethsv_at(HSV_RED, 4);
+    } else {
+        render_ins_off();
+        rgblight_sethsv_at(HSV_OFF, 4);
+    }
 
-    oled_set_cursor(14,2);
     // Layer indicator
+    oled_set_cursor(14,2);
     switch(get_highest_layer(layer_state)) {
         case _BASEPC:
             render_pc();

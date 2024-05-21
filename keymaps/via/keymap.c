@@ -51,6 +51,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
      */
 
+    /* PC Tenkey
+     * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
+     * |ESC|APP| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |  / |  * |  - |
+     * └───┴───┘ └────┴────┴────┴────┴────┘└────┴────┴────┴────┴─────┘ ├────┼────┼────┤
+     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |HOME|NUM |  + |
+     * │Z/H│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ ^ │ \ | BS  | └────┴────┴────┘
+     * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
+     * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |  7 |  8 |  9 |
+     * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
+     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |  4 |  5 |  6 |
+     * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
+     * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |  1 |  2 |  3 |
+     * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
+     * │CTRL│LGUI│LALT|MHEN|           |HENK|KANA|RALT|RGUI|MO_1|CTRL| |  0 |  . |Entr|
+     * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
+     */
+
     /* X68K Layout
      * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
      * |BRK|CPY| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |KIGO|TRKU|HELP|
@@ -63,6 +80,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |NUM |INS |UNDO|
      * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
      * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |R.UP| UP |R.DN|
+     * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
+     * │OPT1│CAPS│XF1 |XF2 |           |XF3 |XF4 |XF5 |ROMA|KANA|OPT2| |LEFT|DOWN|RGHT|
+     * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
+     */
+
+    /* X68K Tenkey
+     * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
+     * |BRK|CPY| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |KIGO|TRKU|HELP|
+     * └───┴───┘ └────┴────┴────┴────┴────┘└────┴────┴────┴────┴─────┘ ├────┼────┼────┤
+     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |ZENK|HIRA|CODE|
+     * │Z/H│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ / │ * │ ^ │ \ | BS  | └────┴────┴────┘
+     * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
+     * │ TAB │ Q │ W │ E │ R │ T │ Y │ 4 │ 5 │ 6 │ - │ @ │ [ │ ENTER │ |HOME|CLR |DEL |
+     * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
+     * │ CAPS │ A | S | D | F | G | H | 1 | 2 | 3 | + | : | ] |      │ |NUM |INS |UNDO|
+     * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
+     * │ SHIFT │ Z │ X │ C │ V │ B │ N │ 0 │ , │ . │ = │Ent│  SHIFT  │ |R.UP| UP |R.DN|
      * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
      * │OPT1│CAPS│XF1 |XF2 |           |XF3 |XF4 |XF5 |ROMA|KANA|OPT2| |LEFT|DOWN|RGHT|
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
@@ -81,15 +115,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,      _______, _______, KC_PPLS,
         _______,   _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,     _______,      KC_P7,   KC_P8,   KC_P9,
         _______,    _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,                  KC_P4,   KC_P5,   KC_P6,
-        MO_68  ,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, MO_68,        KC_P1,   KC_P2,   KC_P3,
-        _______, _______, _______, _______,            _______,            _______, _______, _______, _______, _______, _______,      KC_P0,   KC_PDOT, KC_PENT
+        _______,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,      KC_P1,   KC_P2,   KC_P3,
+        MO_68  , _______, _______, _______,            _______,            _______, _______, _______, _______, _______, MO_68,        KC_P0,   KC_PDOT, KC_PENT
     ),
     [_BASE68] = LAYOUT_compy_jis(
         KC_BRK, _______,     KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, _______,
         KC_ESC,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_RGUI, KC_LGUI, KC_PAUS,
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_HOME, KC_NUM,  KC_DEL,
         KC_LCTL,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  TG_NM68, KC_INS,  KC_END,
-        KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
+        KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGDN, KC_UP,   KC_PGUP,
         KC_F11,  KC_CAPS, KC_LALT, KC_INT5,             KC_SPC,            KC_INT4, KC_INT2, KC_RALT, KC_LSCR, KC_PSCR, KC_F12,       KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_NMPD68] = LAYOUT_compy_jis(
@@ -225,20 +259,8 @@ void keyboard_post_init_user(void) {
     render_hira_off();
     render_zenkaku_off();
     #endif
-}
-
-void oled_render_boot(bool bootloader) {
-    oled_clear();
-    for (int i = 0; i < 16; i++) {
-        oled_set_cursor(0, i);
-        if (bootloader) {
-            oled_write_P(PSTR("Awaiting New Firmware "), false);
-        } else {
-            oled_write_P(PSTR("Rebooting "), false);
-        }
-    }
-
-    oled_render_dirty(true);
+    led_layer_state[_BASEPC] |= _INS;
+    led_layer_state[_BASE68] |= _INS;
 }
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -248,18 +270,24 @@ tap_dance_action_t tap_dance_actions[] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_PSCR:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _KANA;
+                }
             }
             return true;
         case KC_LSCR:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
+                }
             }
             return true;
         case KC_PAUS:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _CODE;
+                }
             }
             return true;
         case KC_INS:
@@ -268,13 +296,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         case KC_LGUI:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _HIRA;
+                }
             }
             return true;
         case KC_RGUI:
-            if (record->event.pressed) {
-                led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
+            if (get_highest_layer(layer_state) == _BASE68) {
+                if (record->event.pressed) {
+                    led_layer_state[get_highest_layer(layer_state)] ^= _ZENK;
+                }
             }
             return true;
         default:
@@ -292,52 +324,42 @@ bool oled_task_user(void) {
         led_layer_state[get_highest_layer(layer_state)] &= ~_CAPS;
     };
     // LED State indicator
-    if (get_highest_layer(layer_state) == _BASE68) {
-        if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
-            render_kana_on();
-            rgblight_sethsv_at(HSV_RED, 5);
-        } else {
-            render_kana_off();
-            rgblight_sethsv_at(HSV_OFF, 5);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _ROMA) {
-            render_roma_on();
-            rgblight_sethsv_at(HSV_RED, 6);
-        } else {
-            render_roma_off();
-            rgblight_sethsv_at(HSV_OFF, 6);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _CODE) {
-            render_code_on();
-            rgblight_sethsv_at(HSV_RED, 2);
-        } else {
-            render_code_off();
-            rgblight_sethsv_at(HSV_OFF, 2);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _INS) {
-            render_ins_on();
-            rgblight_sethsv_at(HSV_RED, 4);
-        } else {
-            render_ins_off();
-            rgblight_sethsv_at(HSV_OFF, 4);
-        }
-        if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
-            render_hira_on();
-            rgblight_sethsv_at(68,255,255, 1);
-        } else {
-            render_hira_off();
-            rgblight_sethsv_at(HSV_OFF, 1);
-        }
-        oled_set_cursor(18,3);
-        if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
-            render_zenkaku_on();
-            rgblight_sethsv_at(68,255,255, 0);
-        } else {
-            render_zenkaku_off();
-            rgblight_sethsv_at(HSV_OFF, 0);
-        }
-    } 
-
+    if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
+        render_kana_on();
+        rgblight_sethsv_at(HSV_RED, 5);
+    } else {
+        render_kana_off();
+        rgblight_sethsv_at(HSV_OFF, 5);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _ROMA) {
+        render_roma_on();
+        rgblight_sethsv_at(HSV_RED, 6);
+    } else {
+        render_roma_off();
+        rgblight_sethsv_at(HSV_OFF, 6);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _CODE) {
+        render_code_on();
+        rgblight_sethsv_at(HSV_RED, 2);
+    } else {
+        render_code_off();
+        rgblight_sethsv_at(HSV_OFF, 2);
+    }
+    if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
+        render_hira_on();
+        rgblight_sethsv_at(68,255,255, 1);
+    } else {
+        render_hira_off();
+        rgblight_sethsv_at(HSV_OFF, 1);
+    }
+    oled_set_cursor(18,3);
+    if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
+        render_zenkaku_on();
+        rgblight_sethsv_at(68,255,255, 0);
+    } else {
+        render_zenkaku_off();
+        rgblight_sethsv_at(HSV_OFF, 0);
+    }
     if (led_layer_state[get_highest_layer(layer_state)] & _CAPS) {
         render_caps_on();
         rgblight_sethsv_at(HSV_RED, 7);
@@ -345,9 +367,16 @@ bool oled_task_user(void) {
         render_caps_off();
 	    rgblight_sethsv_at(HSV_OFF, 7);
     }
+    if (led_layer_state[get_highest_layer(layer_state)] & _INS) {
+        render_ins_on();
+        rgblight_sethsv_at(HSV_RED, 4);
+    } else {
+        render_ins_off();
+        rgblight_sethsv_at(HSV_OFF, 4);
+    }
 
-    oled_set_cursor(14,2);
     // Layer indicator
+    oled_set_cursor(14,2);
     switch(get_highest_layer(layer_state)) {
         case _BASEPC:
             render_pc();
