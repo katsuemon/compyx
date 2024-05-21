@@ -43,28 +43,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
      * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |DEL |CLR | -  |
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
-     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |PSCR|INS | +  |
+     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |    |INS | +  |
      * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
      * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |PGUP| UP |PGDN|
      * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
      * │CTRL│LGUI│LALT|MHEN|           |HENK|KANA|RALT|RGUI|MO_1|CTRL| |LEFT|DOWN|RGHT|
-     * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
-     */
-
-    /* PC Tenkey
-     * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
-     * |ESC|APP| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |  / |  * |  - |
-     * └───┴───┘ └────┴────┴────┴────┴────┘└────┴────┴────┴────┴─────┘ ├────┼────┼────┤
-     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |HOME|NUM |  + |
-     * │Z/H│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ ^ │ \ | BS  | └────┴────┴────┘
-     * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
-     * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |  7 |  8 |  9 |
-     * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
-     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |  4 |  5 |  6 |
-     * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
-     * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |  1 |  2 |  3 |
-     * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
-     * │CTRL│LGUI│LALT|MHEN|           |HENK|KANA|RALT|RGUI|MO_1|CTRL| |  0 |  . |Entr|
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
      */
 
@@ -85,28 +68,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
      */
 
-    /* X68K Tenkey
-     * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
-     * |BRK|CPY| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |KIGO|TRKU|HELP|
-     * └───┴───┘ └────┴────┴────┴────┴────┘└────┴────┴────┴────┴─────┘ ├────┼────┼────┤
-     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |ZENK|HIRA|CODE|
-     * │Z/H│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ / │ * │ ^ │ \ | BS  | └────┴────┴────┘
-     * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
-     * │ TAB │ Q │ W │ E │ R │ T │ Y │ 4 │ 5 │ 6 │ - │ @ │ [ │ ENTER │ |HOME|CLR |DEL |
-     * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
-     * │ CAPS │ A | S | D | F | G | H | 1 | 2 | 3 | + | : | ] |      │ |NUM |INS |UNDO|
-     * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
-     * │ SHIFT │ Z │ X │ C │ V │ B │ N │ 0 │ , │ . │ = │Ent│  SHIFT  │ |R.UP| UP |R.DN|
-     * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
-     * │OPT1│CAPS│XF1 |XF2 |           |XF3 |XF4 |XF5 |ROMA|KANA|OPT2| |LEFT|DOWN|RGHT|
-     * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
-     */
-
     [_BASEPC] = LAYOUT_compy_jis(
         KC_ESC,  TD_68,      KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, KC_VOLU,
         KC_GRV,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_HOME, TG_NMPC, KC_END,
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_DEL,  KC_CLR,  KC_PMNS,
-        KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  KC_PSCR, KC_INS,  KC_PPLS,
+        KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  _______, KC_INS,  KC_PPLS,
         KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
         KC_LCTL, KC_LGUI, KC_LALT, JP_MHEN,             KC_SPC,            JP_HENK, JP_KANA, KC_RALT, KC_RGUI, MO(1)  , KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT
     ),
@@ -115,15 +81,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,      _______, _______, KC_PPLS,
         _______,   _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,     _______,      KC_P7,   KC_P8,   KC_P9,
         _______,    _______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,                  KC_P4,   KC_P5,   KC_P6,
-        _______,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,      KC_P1,   KC_P2,   KC_P3,
-        MO_68  , _______, _______, _______,            _______,            _______, _______, _______, _______, _______, MO_68,        KC_P0,   KC_PDOT, KC_PENT
+        MO_68  ,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, MO_68,        KC_P1,   KC_P2,   KC_P3,
+        _______, _______, _______, _______,            _______,            _______, _______, _______, _______, _______, _______,      KC_P0,   KC_PDOT, KC_PENT
     ),
     [_BASE68] = LAYOUT_compy_jis(
         KC_BRK, _______,     KC_F1,     KC_F2,    KC_F3,    KC_F4,    KC_F5,      KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10,      KC_MUTE, KC_VOLD, _______,
         KC_ESC,    JP_1,   JP_2,   JP_3,   JP_4,   JP_5,   JP_6,   JP_7,   JP_8,   JP_9,   JP_0,JP_MINS,JP_CIRC, JP_YEN,KC_BSPC,      KC_RGUI, KC_LGUI, KC_PAUS,
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_HOME, KC_NUM,  KC_DEL,
         KC_LCTL,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  TG_NM68, KC_INS,  KC_END,
-        KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGDN, KC_UP,   KC_PGUP,
+        KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
         KC_F11,  KC_CAPS, KC_LALT, KC_INT5,             KC_SPC,            KC_INT4, KC_INT2, KC_RALT, KC_LSCR, KC_PSCR, KC_F12,       KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_NMPD68] = LAYOUT_compy_jis(
@@ -259,6 +225,20 @@ void keyboard_post_init_user(void) {
     render_hira_off();
     render_zenkaku_off();
     #endif
+}
+
+void oled_render_boot(bool bootloader) {
+    oled_clear();
+    for (int i = 0; i < 16; i++) {
+        oled_set_cursor(0, i);
+        if (bootloader) {
+            oled_write_P(PSTR("Awaiting New Firmware "), false);
+        } else {
+            oled_write_P(PSTR("Rebooting "), false);
+        }
+    }
+
+    oled_render_dirty(true);
 }
 
 tap_dance_action_t tap_dance_actions[] = {
