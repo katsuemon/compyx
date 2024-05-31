@@ -259,8 +259,8 @@ void keyboard_post_init_user(void) {
     render_hira_off();
     render_zenkaku_off();
     #endif
-    #led_layer_state[_BASEPC] |= _INS;
-    #led_layer_state[_BASE68] |= _INS;
+    //led_layer_state[_BASEPC] |= _INS;
+    //led_layer_state[_BASE68] |= _INS;
 }
 
 tap_dance_action_t tap_dance_actions[] = {
