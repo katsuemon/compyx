@@ -1,4 +1,4 @@
-# compyx
+# CompyX
 ![compy_photo](https://github.com/katsuemon/compyx/assets/32584636/0d1bc39d-bcb0-427b-852e-03412033ee11)
 
 ## Overview
