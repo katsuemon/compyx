@@ -325,7 +325,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool oled_task_user(void) {
     const led_t led_state = host_keyboard_led_state();
     // Caps lock status from host
-    if (get_highest_layer(layer_state) == _BASEPC) {
+    if (get_highest_layer(layer_state) < _BASE68) {
         if (led_state.caps_lock) { 
             led_layer_state[get_highest_layer(layer_state)] |= _CAPS; 
         } else { 
