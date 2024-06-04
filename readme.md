@@ -6,7 +6,8 @@
 
 
 ## BuildGuide
-
+Please refer to the assembly instructions here.
+(https://zinichi.net/home/compyx-01/)
 
 
 ## Bootloader
