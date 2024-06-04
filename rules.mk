@@ -1,5 +1,8 @@
 # This file intentionally left blank
 
+# Link Time Optimization required for size.
+LTO_ENABLE = yes
+
 CUSTOM_MATRIX = yes
 OLED_ENABLE = yes
 RGBLIGHT_ENABLE = yes

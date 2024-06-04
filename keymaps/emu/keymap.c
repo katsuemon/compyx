@@ -68,11 +68,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
      */
 
-    /* X68K Layout
+    /* X68K Layout for Emulator
      * ┌───┬───┐ ┌────┬────┬────┬────┬────┐┌────┬────┬────┬────┬─────┐ ┌────┬────┬────┐
-     * |BRK|CPY| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |KIGO|TRKU|HELP|
+     * |BRK|CPY| | F1 | F2 | F3 | F4 | F5 || F6 | F7 | F8 | F9 | F10 | |F14 |F15 |F16 |
      * └───┴───┘ └────┴────┴────┴────┴────┘└────┴────┴────┴────┴─────┘ ├────┼────┼────┤
-     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |ZENK|HIRA|CODE|
+     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐ |F17 |F18 |F19 |
      * │Z/H│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ ^ │ \ | BS  | └────┴────┴────┘
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
      * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |HOME|CLR |DEL |
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
      * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |R.UP| UP |R.DN|
      * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
-     * │OPT1│CAPS│XF1 |XF2 |           |XF3 |XF4 |XF5 |ROMA|KANA|OPT2| |LEFT|DOWN|RGHT|
+     * │OPT1│F20 │XF1 |XF2 |           |XF3 |XF4 |XF5 |F21 |F22 |F13 | |LEFT|DOWN|RGHT|
      * └────┴────┴────┴────┴───────────┴────┴────┴────┴────┴────┴────┘ └────┴────┴────┘
      */
 
@@ -325,7 +325,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool oled_task_user(void) {
     const led_t led_state = host_keyboard_led_state();
     // Caps lock status from host
-    if (get_highest_layer(layer_state) < _BASE68) {
+    if ((get_highest_layer(layer_state) == _BASEPC) || (get_highest_layer(layer_state) == _NMPDPC)) {
         if (led_state.caps_lock) { 
             led_layer_state[get_highest_layer(layer_state)] |= _CAPS; 
         } else { 
