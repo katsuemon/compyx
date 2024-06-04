@@ -6,11 +6,11 @@ SHARP X68000 CompactXVI のキーボードを模した自作キーボードで�
 普段使いできつつエミュレータを使う時にX68000特有のキー数を満たし、配列をPCとX68000とで即座に切り替えられることを
 目標に設計されています。
 
-キーボードの詳細はふゆきさんのブログ(https://zinichi.net/home/compyx-00/)をご参照ください
+キーボードの詳細はふゆきさんのブログをご参照ください [その名は CompyX (CompactXVI風キーボード) デザイン/スペック編](https://zinichi.net/home/compyx-00/)
 
 ## ビルドガイド
 
-頒布時のキットの組み立て方はこちらになります(https://zinichi.net/home/compyx-01/)
+頒布時のキットの組み立て方はこちらになります [その名は CompyX (CompactXVI風キーボード) キット説明編](https://zinichi.net/home/compyx-01/)
 
 ## Overview
 The self-made keyboard is modeled after the X68000 Compact XVI keyboard. 
