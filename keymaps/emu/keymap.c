@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─────┤ ┌────┬────┬────┐
      * │ TAB │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ @ │ [ │ ENTER │ |HOME|CLR |DEL |
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐      │ ├────┼────┼────┤
-     * │ CAPS │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |NUM |INS |UNDO|
+     * │ CTRL │ A | S | D | F | G | H | J | K | L | ; | : | ] |      │ |NUM |INS |UNDO|
      * ├──────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴──────┤ ├────┼────┼────┤
      * │ SHIFT │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ _ │  SHIFT  │ |R.UP| UP |R.DN|
      * ├────┬──┴─┬─┴──┬┴───┼───┴───┴───┼───┴┬──┴─┬─┴──┬┴───┼────┬────┤ ├────┼────┼────┤
@@ -334,7 +334,7 @@ bool oled_task_user(void) {
     };
     // LED State indicator
     if (led_layer_state[get_highest_layer(layer_state)] & _KANA) {
-        render_kana_on();
+       render_kana_on();
         rgblight_sethsv_at(HSV_RED, 5);
     } else {
         render_kana_off();
@@ -356,7 +356,7 @@ bool oled_task_user(void) {
     }
     if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
         render_hira_on();
-        rgblight_sethsv_at(68,255,255, 1);
+        rgblight_sethsv_at(62,255,255, 1);
     } else {
         render_hira_off();
         rgblight_sethsv_at(HSV_OFF, 1);
@@ -364,7 +364,7 @@ bool oled_task_user(void) {
     oled_set_cursor(18,3);
     if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
         render_zenkaku_on();
-        rgblight_sethsv_at(68,255,255, 0);
+        rgblight_sethsv_at(62,255,255, 0);
     } else {
         render_zenkaku_off();
         rgblight_sethsv_at(HSV_OFF, 0);

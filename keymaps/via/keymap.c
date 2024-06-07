@@ -347,7 +347,7 @@ bool oled_task_user(void) {
     }
     if (led_layer_state[get_highest_layer(layer_state)] & _HIRA) {
         render_hira_on();
-        rgblight_sethsv_at(68,255,255, 1);
+        rgblight_sethsv_at(62,255,255, 1);
     } else {
         render_hira_off();
         rgblight_sethsv_at(HSV_OFF, 1);
@@ -355,7 +355,7 @@ bool oled_task_user(void) {
     oled_set_cursor(18,3);
     if (led_layer_state[get_highest_layer(layer_state)] & _ZENK) {
         render_zenkaku_on();
-        rgblight_sethsv_at(68,255,255, 0);
+        rgblight_sethsv_at(62,255,255, 0);
     } else {
         render_zenkaku_off();
         rgblight_sethsv_at(HSV_OFF, 0);
