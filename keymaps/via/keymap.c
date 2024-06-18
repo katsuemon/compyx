@@ -276,7 +276,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return true;
-        case KC_LSCR:
+        case KC_SCRL:
             if (get_highest_layer(layer_state) == _BASE68) {
                 if (record->event.pressed) {
                     led_layer_state[get_highest_layer(layer_state)] ^= _ROMA;
