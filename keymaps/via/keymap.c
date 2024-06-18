@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,       JP_Q,   JP_W,   JP_E,   JP_R,   JP_T,   JP_Y,   JP_U,   JP_I,   JP_O,   JP_P,   JP_AT,   JP_LBRC,KC_ENTER,      KC_DEL,  KC_CLR,  KC_PMNS,
         KC_CAPS,       JP_A,   JP_S,   JP_D,   JP_F,   JP_G,   JP_H,   JP_J,   JP_K,   JP_L,JP_SCLN,JP_COLN,JP_RBRC,                  _______, KC_INS,  KC_PPLS,
         KC_LSFT,        JP_Z,    JP_X,    JP_C,    JP_V,    JP_B,    JP_N,    JP_M, JP_COMM,  JP_DOT, JP_SLSH, JP_BSLS, KC_RSFT,      KC_PGUP, KC_UP,   KC_PGDN,
-        KC_LCTL, KC_LGUI, KC_LALT, JP_MHEN,             KC_SPC,            JP_HENK, JP_KANA, KC_RALT, KC_RGUI, MO(1)  , KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL, KC_LGUI, KC_LALT, JP_MHEN,             KC_SPC,            JP_HENK, JP_KANA, KC_RALT, KC_RGUI, KC_RCTL, MO(1),        KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_NMPDPC] = LAYOUT_compy_jis(
         _______,_______,   _______,   _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,  _______,      KC_PSLS, KC_PAST, KC_PMNS,
